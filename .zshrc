@@ -14,6 +14,9 @@ if [ -z "$ZDOTDIR" ]; then
 fi
 if [ ! -d $ZDOTDIR ]; then mkdir -p $ZDOTDIR; fi
 
+# Remove suffix chars (otherwise default value but without pipe)
+ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
+
 # Store OS for later use
 OS=$(uname -s)
 
