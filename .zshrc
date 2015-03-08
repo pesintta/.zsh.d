@@ -44,14 +44,19 @@ alias d="dirs -v"
 
 
 # [Key Binding Settings]
-bindkey -e
-# Gnome-Terminal keys (Home,End,Delete)
 # One can type cat and press the key that does not work to get the keycode...
+# Setting default (emacs) mode of keybindings
+bindkey -e
+
+# Terminal kursor moving keys (Home,End,Delete)
 bindkey "\eOH" beginning-of-line
 bindkey "\eOF" end-of-line
 bindkey "\e[H" beginning-of-line
 bindkey "\e[F" end-of-line
 bindkey "\e[3~" delete-char
+
+# Esc to work as undoing key
+bindkey "\e" undo
 
 
 # [Autocorrection Settings]
