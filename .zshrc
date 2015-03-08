@@ -49,6 +49,8 @@ bindkey -e
 # One can type cat and press the key that does not work to get the keycode...
 bindkey "\eOH" beginning-of-line
 bindkey "\eOF" end-of-line
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
 bindkey "\e[3~" delete-char
 
 
