@@ -28,6 +28,13 @@ setopt hist_ignore_dups hist_ignore_space share_history inc_append_history exten
 
 
 # [Directory Stack Settings]
+# Dirstack options
+DIRSTACKSIZE=20
+setopt autopushd pushdminus pushdtohome
+# Ignore duplicates in stack
+setopt pushdignoredups
+alias d="dirs -v"
+
 # Keep a persistent dirstack in $ZDTODIR/.zdirstack
 DIRSTACKFILE="$ZDOTDIR/.zdirstack"
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -37,13 +44,6 @@ fi
 chpwd() {
    print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
 }
-
-# Dirstack options
-DIRSTACKSIZE=20
-setopt autopushd pushdminus pushdtohome
-# Ignore duplicates in stack
-setopt pushdignoredups
-alias d="dirs -v"
 
 
 # [Key Binding Settings]
