@@ -15,8 +15,8 @@ The configuration file and the repository in general was designed with speed and
  
  
 ## Installation:
- 1. Clone the repo
-   * git clone https://github.com/pesintta/.zsh.d.git/
+ 1. Clone the repo (incl. the submodules)
+   * git clone --recursive https://github.com/pesintta/.zsh.d.git/
  2. Symlink the included .zshrc into your $HOME/.zshrc
    * ln -s .zsh.d/.zshrc ~/.zshrc
  3. start zsh and enjoy!
