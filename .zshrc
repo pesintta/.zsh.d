@@ -14,6 +14,8 @@ if [ -z "$ZDOTDIR" ]; then
 fi
 if [ ! -d $ZDOTDIR ]; then mkdir -p $ZDOTDIR; fi
 
+# Store OS for later use
+OS=$(uname -s)
 
 # [Command History Settings]
 HISTFILE=$ZDOTDIR/.zsh_history
@@ -109,8 +111,17 @@ compinit
 autoload -Uz colors
 colors
 
-# alias various commands to produce colored output
-alias ls="ls --color=auto"
+# Alias various commands to produce colored output
+# There are some differences between syntax for different operating systems
+case "$OS" in
+"Darwin")
+    alias ls='ls -G'
+    ;;
+"Linux")
+   alias ls='ls --color=auto'
+   ;;
+esac
+
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --colour=auto'
