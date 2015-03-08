@@ -1,5 +1,7 @@
 # [General Settings]
 # Ensure that there is dot zsh directory
+# setopt needed to silence pushd/popd messages
+setopt pushdsilent
 if [ -z "$ZDOTDIR" ]; then
    if [ -L ~/.zshrc ]; then
       pushd
@@ -33,7 +35,7 @@ chpwd() {
 
 # Dirstack options
 DIRSTACKSIZE=20
-setopt autopushd pushdminus pushdsilent pushdtohome
+setopt autopushd pushdminus pushdtohome
 # Ignore duplicates in stack
 setopt pushdignoredups
 alias d="dirs -v"
