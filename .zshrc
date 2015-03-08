@@ -2,7 +2,10 @@
 # Ensure that there is dot zsh directory
 if [ -z "$ZDOTDIR" ]; then
    if [ -L ~/.zshrc ]; then
-      ZDOTDIR=$(dirname $(readlink -f ~/.zshrc))
+      pushd
+      cd $(dirname $(readlink ~/.zshrc))
+      ZDOTDIR=$(pwd -P)
+      popd
    else
       ZDOTDIR=$(dirname ~/.zshrc)
    fi
