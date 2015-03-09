@@ -189,7 +189,7 @@ RPROMPT='%{$fg[red]%}%*%{$reset_color%}'
 # https://github.com/zsh-users/zsh-syntax-highlighting
 if [ -e $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
    source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line)
+   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern line)
 fi
 
 # Utilize history substring search
