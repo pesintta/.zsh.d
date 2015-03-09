@@ -121,6 +121,10 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
+# Force loading of completion list and bind '+' key to accept but stay in menu
+zmodload zsh/complist
+bindkey -M menuselect "+" accept-and-menu-complete
+
 
 # [Color Settings]
 autoload -Uz colors
