@@ -76,6 +76,9 @@ zstyle ':completion:*' completer _expand _complete _ignored _correct _approximat
 # for all completions: grouping the output
 zstyle ':completion:*' group-name ''
 
+# show original completion first
+zstyle ':completion:*' group-order original corrections
+
 # Allow 2 errors in approximate completion
 zstyle ':completion:*:approximate:*' max-errors 2
 
