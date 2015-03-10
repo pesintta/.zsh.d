@@ -15,6 +15,17 @@ if [ -z "$ZDOTDIR" ]; then
 fi
 if [ ! -d $ZDOTDIR ]; then mkdir -p $ZDOTDIR; fi
 
+# Populate LS_COLORS
+if [ -x /usr/bin/dircolors ]; then
+   if [ -r ~/.dir_colors ]; then
+      eval "`dircolors ~/.dir_colors`"
+   elif [ -r /etc/dir_colors ]; then
+      eval "`dircolors /etc/dir_colors`"
+   else
+      eval "`dircolors`"
+   fi
+fi
+
 # Remove suffix chars (otherwise default value but without pipe)
 ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 
