@@ -63,6 +63,8 @@ bindkey "\e[3~" delete-char
 # Esc to work as undoing key
 bindkey "\e" undo
 
+# Shift-Tab as reverse complete
+bindkey "\e[Z" reverse-menu-complete
 
 # [Autocorrection Settings]
 setopt correct_all
