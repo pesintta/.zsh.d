@@ -2,6 +2,7 @@
 # Ensure that there is dot zsh directory
 setopt pushdsilent              # setopt needed to silence pushd/popd messages
 setopt extended_glob            # enable zsh style globbing
+setopt no_nomatch               # proceed with cmd even if glob does not match
 if [ -z "$ZDOTDIR" ]; then
    if [ -L ~/.zshrc ]; then
       pushd
