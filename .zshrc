@@ -103,8 +103,11 @@ zstyle ':completion:*' group-order original corrections
 # Allow 2 errors in approximate completion
 zstyle ':completion:*:approximate:*' max-errors 2
 
-# colored completion - use my LS_COLORS
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# colored completion - use my LS_COLORS if available
+zstyle ':completion:*' list-colors ''
+if [ -n "$LS_COLORS" ]; then
+   zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+fi
 
 # Enable completion menu by arrow keys
 zstyle ':completion:*' menu select
