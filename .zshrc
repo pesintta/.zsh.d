@@ -142,6 +142,11 @@ zstyle ':completion:*' rehash true
 
 zstyle :compinstall filename '~/.zshrc'
 
+# add custom completions if they exist
+if [ -d $ZDOTDIR/gentoo-zsh-completions/src ]; then
+   fpath=("$ZDOTDIR/gentoo-zsh-completions/src" $fpath)
+fi
+
 autoload -Uz compinit
 compinit
 
