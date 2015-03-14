@@ -170,7 +170,7 @@ case "$OS" in
 "Linux")
    alias l='ls --color=auto'
    alias ls='ls --color=auto'
-   alias ll=ls -la --color=auto'
+   alias ll='ls -la --color=auto'
    ;;
 esac
 
