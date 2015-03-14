@@ -178,6 +178,8 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --colour=auto'
 
+alias x='exit'
+
 
 # [Version Control Module Settings]
 # Needed for vcs_info prompt substitution
