@@ -163,17 +163,20 @@ colors
 # There are some differences between syntax for different operating systems
 case "$OS" in
 "Darwin")
-    alias ls='ls -G'
+   alias l='ls -G'
+   alias ls='ls -G'
+   alias ll='ls -la -G'
     ;;
 "Linux")
+   alias l='ls --color=auto'
    alias ls='ls --color=auto'
+   alias ll=ls -la --color=auto'
    ;;
 esac
 
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --colour=auto'
-
 
 
 # [Version Control Module Settings]
