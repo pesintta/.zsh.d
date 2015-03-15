@@ -36,7 +36,7 @@ OS=$(uname -s)
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_dups hist_ignore_space share_history extended_history hist_verify
+setopt hist_ignore_dups hist_ignore_space hist_reduce_blanks share_history extended_history hist_verify
 
 
 # [Directory Stack Settings]
