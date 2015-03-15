@@ -72,6 +72,10 @@ bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 bindkey "\e[3~" delete-char
 
+# PageUp, PageDown move in history (like in bash)
+bindkey "\e[5~" up-line-or-history
+bindkey "\e[6~" down-line-or-history
+
 # Esc to work as undoing key
 bindkey "\e" undo
 
