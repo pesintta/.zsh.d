@@ -197,9 +197,25 @@ zstyle ':vcs_info:*' enable git cvs svn hg
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr '%F{6}●'
 zstyle ':vcs_info:*' unstagedstr '%F{3}●'
-zstyle ':vcs_info:*' actionformats ' %F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%c%u%F{3}|%F{1}%a%F{5}]%f'
-zstyle ':vcs_info:*' formats ' %F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%c%u%F{5}]%f'
+zstyle ':vcs_info:*' actionformats ' %F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%c%u%F{3}|%F{1}%a%F{5}]%m%f'
+zstyle ':vcs_info:*' formats ' %F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%c%u%F{5}]%m%f'
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+zstyle ':vcs_info:git*+set-message:*' hooks git-status
+
+# Extra hook run in case of git
+# This will fill vcs_info variable %m with extra informative status
+function +vi-git-status() {
+    local ahead behind
+    local -a gitstatus
+
+    ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD --count)
+    (( $ahead )) && gitstatus+=( "%B%F{4}↑${ahead}%f%b" )
+
+    behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} --count)
+    (( $behind )) && gitstatus+=( "%B%F{5}↓${behind}%f%b" )
+
+    hook_com[misc]+=$gitstatus
+}
 
 
 # [Prompt Color and Output Theme Settings]
