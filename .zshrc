@@ -205,16 +205,16 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-status
 # Extra hook run in case of git
 # This will fill vcs_info variable %m with extra informative status
 function +vi-git-status() {
-    local ahead behind
-    local -a gitstatus
+   local ahead behind
+   local -a gitstatus
 
-    ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD --count)
-    (( $ahead )) && gitstatus+=( "%B%F{4}↑${ahead}%f%b" )
+   ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD --count 2> /dev/null)
+   (( $ahead )) && gitstatus+=( "%B%F{4}↑${ahead}%f%b" )
 
-    behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} --count)
-    (( $behind )) && gitstatus+=( "%B%F{5}↓${behind}%f%b" )
+   behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} --count 2> /dev/null)
+   (( $behind )) && gitstatus+=( "%B%F{5}↓${behind}%f%b" )
 
-    hook_com[misc]+=$gitstatus
+   hook_com[misc]+=$gitstatus
 }
 
 
