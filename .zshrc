@@ -92,6 +92,9 @@ bindkey "\e[1;5D" backward-word
 # [Autocorrection Settings]
 setopt correct_all
 
+# Ignore file corrections that begin with a dot (available from zsh 5.0.7 -> ) 
+CORRECT_IGNORE_FILE=".*"
+
 
 # [Command Completion Settings]
 # See: http://zsh.sourceforge.net/Doc/Release/Completion-System.html
