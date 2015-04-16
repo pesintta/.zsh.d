@@ -92,6 +92,8 @@ bindkey "\e[1;5D" backward-word
 # [Autocorrection Settings]
 setopt correct_all
 
+# Ignore corrections that begin with underscore (internal functions mostly)
+CORRECT_IGNORE="_*"
 # Ignore file corrections that begin with a dot (available from zsh 5.0.7 -> ) 
 CORRECT_IGNORE_FILE=".*"
 
