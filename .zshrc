@@ -159,7 +159,6 @@ for item in $ZDOTDIR/completions/**/_*; do
    # Add completion path only if it wasn't added already
    if [ "$NEWCOMP" != "$PREVCOMP" ]; then
       fpath=("$NEWCOMP" $fpath)
-      echo $NEWCOMP
       PREVCOMP="$NEWCOMP"
    fi
 done
