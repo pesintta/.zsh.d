@@ -152,9 +152,17 @@ zstyle ':completion:*' rehash true
 zstyle :compinstall filename '~/.zshrc'
 
 # add custom completions if they exist
-if [ -d $ZDOTDIR/gentoo-zsh-completions/src ]; then
-   fpath=("$ZDOTDIR/gentoo-zsh-completions/src" $fpath)
-fi
+PREVCOMP=""
+for item in $ZDOTDIR/completions/**/_*; do
+   NEWCOMP=$(dirname $item)
+
+   # Add completion path only if it wasn't added already
+   if [ "$NEWCOMP" != "$PREVCOMP" ]; then
+      fpath=("$NEWCOMP" $fpath)
+      echo $NEWCOMP
+      PREVCOMP="$NEWCOMP"
+   fi
+done
 
 autoload -Uz compinit
 compinit

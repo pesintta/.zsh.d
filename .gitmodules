@@ -5,5 +5,8 @@
 	path = zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
 [submodule "gentoo-zsh-completions"]
-	path = gentoo-zsh-completions
+	path = completions/gentoo-zsh-completions
 	url = https://github.com/radhermit/gentoo-zsh-completions.git
+[submodule "completions/docker-zsh-completion"]
+	path = completions/docker-zsh-completion
+	url = https://github.com/felixr/docker-zsh-completion.git
