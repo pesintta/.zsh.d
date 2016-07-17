@@ -301,3 +301,6 @@ if [ -e $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh ]
    bindkey '^[[A' history-substring-search-up
    bindkey '^[[B' history-substring-search-down
 fi
+
+# Load all .zsh files (extension scripts) from zshrc.d directory
+for file ($ZDOTDIR/zshrc.d/**/*.zsh(.N)) source $file
