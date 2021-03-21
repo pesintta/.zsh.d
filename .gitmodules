@@ -10,3 +10,6 @@
 [submodule "completions/docker-zsh-completion"]
 	path = completions/docker-zsh-completion
 	url = https://github.com/felixr/docker-zsh-completion.git
+[submodule "completions/zsh-completions"]
+	path = completions/zsh-completions
+	url = git://github.com/zsh-users/zsh-completions.git
