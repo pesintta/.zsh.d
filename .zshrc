@@ -278,7 +278,7 @@ function ssh_prompt {
    if [ -n "$SSH_CLIENT" ]; then echo "(ssh) "; else echo ""; fi
 }
 
-PROMPT='%{$fg_bold[red]%}$(ssh_prompt)%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) %{$reset_color%}%#${vcs_info_msg_0_} '
+PROMPT='%{$fg_bold[red]%}$(ssh_prompt)%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) %{$reset_color%}%(?..%{$fg[red]%})%#${vcs_info_msg_0_} '
 
 # Clock on the right hand side
 RPROMPT='%{$fg[red]%}%*%{$reset_color%}'
